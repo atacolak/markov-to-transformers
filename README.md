@@ -2,22 +2,6 @@
 
 This repo explores character-level name generation using different modeling techniques—from a straightforward trigram-based Markov Model to a simple Multilayer Perceptron (MLP).
 
-## Structure
-
-```
-atacolak-markov-to-transformers/
-├── data/
-├── models/
-│   ├── markov-model.py
-│   └── MLP.py
-├── notebooks/
-│   ├── Multilayer Perceptron for Next Character Prediction.ipynb
-│   └── Trigram-based Markov Model for Name Generation.ipynb
-└── results/
-    ├── markov_model.png
-    └── mlp_model.png
-```
-
 ## Models
 
 ### 1. Trigram-based Markov Model
@@ -36,6 +20,14 @@ A simple neural network trained to predict the next character given two precedin
 ![MLP Model Output](results/mlp_model.png)
 
 - Tries to be fancier than Markov, but kinda just fumbles around. Super simple implementation (for now!)
+- 
+### 3. Positional MLP Model
+
+An improved version of the MLP model that **incorporates positional embeddings for start tokens**.
+
+Instead of treating all characters equally, this model assigns **unique positional encodings to the first few characters**, helping it differentiate name beginnings.
+
+![Positional MLP Model Output](results/positional_mlp.png)
 
 ## How to Run
 
@@ -44,9 +36,14 @@ A simple neural network trained to predict the next character given two precedin
 python models/markov-model.py
 ```
 
-### MLP Model
+### Basic MLP Model
 ```bash
 python models/MLP.py
+```
+
+### Positional MLP Model
+```bash
+python models/positional_MLP.py
 ```
 
 Provide the path to your dataset (`names.txt`) when prompted. Models are interactive—enter a starting character and see generated names!
