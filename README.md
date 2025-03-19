@@ -27,6 +27,8 @@ An improved version of the MLP model that **incorporates positional embeddings f
 
 Instead of treating all characters equally, this model assigns **unique positional encodings to the first few characters**, helping it differentiate name beginnings.
 
+This approach is inspired by [A Neural Probabilistic Language Model (Bengio et al., 2003)](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf), with the additional inclusion of positional embeddings to enhance sequential awareness.
+
 ![Positional MLP Model Output](results/positional_mlp.png)
 
 ## How to Run
