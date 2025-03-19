@@ -1,6 +1,6 @@
 # Markov to Transformers: Character-Level Name Generation
 
-This repo explores character-level name generation using different modeling techniques—from a straightforward trigram-based Markov Model to a simple Multilayer Perceptron (MLP).
+This repo explores character-level name generation using different modeling techniques—from a straightforward trigram-based Markov Model to a Multilayer Perceptron (MLP).
 
 ## Models
 
