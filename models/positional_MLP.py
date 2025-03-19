@@ -55,7 +55,7 @@ except ValueError:
     sys.exit()
 
 # load names from file
-with open('data/names.txt', 'r') as f:
+with open('../data/names.txt', 'r') as f:
     names = f.read().splitlines()
 print(f"Saved {len(names)} names.")
 
