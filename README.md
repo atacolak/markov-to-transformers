@@ -20,7 +20,7 @@ A simple neural network trained to predict the next character given two precedin
 ![MLP Model Output](results/mlp_model.png)
 
 - Tries to be fancier than Markov, but kinda just fumbles around. Super simple implementation (for now!)
-- 
+
 ### 3. Positional MLP Model
 
 An improved version of the MLP model that **incorporates positional embeddings for start tokens**.
