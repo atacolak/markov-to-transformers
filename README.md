@@ -23,9 +23,15 @@ A simple neural network trained to predict the next character given two precedin
 
 ### 3. Positional MLP Model
 
-An improved version of the MLP model that **incorporates positional embeddings for start tokens**.
+An improved version of the MLP model that incorporates both positional embeddings and dense character embeddings.
 
-Instead of treating all characters equally, this model assigns **unique positional encodings to the first few characters**, helping it differentiate name beginnings.
+Each character is mapped to an n-dimensional embedding rather than a one-hot vector.
+
+These embeddings are learned during training, allowing the model to capture relationships between characters.
+
+Instead of zero-padding or treating all characters uniformly, the model assigns unique positional encodings to the start tokens.
+
+This approach is inspired by [A Neural Probabilistic Language Model (Bengio et al., 2003)](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf), with the additional inclusion of positional embeddings to enhance sequential awareness.
 
 ![Positional MLP Model Output](results/positional_mlp.png)
 
