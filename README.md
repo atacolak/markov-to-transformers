@@ -35,6 +35,18 @@ This approach is inspired by [A Neural Probabilistic Language Model (Bengio et a
 
 ![Positional MLP Model Output](results/positional_mlp.png)
 
+### 4. MLP Letterform Generator — *Char2Pix*
+A scratch-built MLP that learns to **draw characters** from symbolic embeddings. Given a letter like `'h'`, the model outputs a 20x20 image representing its glyph. The network learns to decode letters into visual space using only supervision from pixel data.
+
+![Glyph Generator Output](results/glyph_mlp.png)
+
+- Font rendering is handled with PIL to create 20x20 grayscale glyphs.
+- Each character is assigned a trainable embedding.
+- A small MLP maps these embeddings to 400 pixels.
+- The network is trained using MSE loss to match real font glyphs.
+
+
+
 ## How to Run
 
 ### Markov Model
