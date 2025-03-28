@@ -1,6 +1,6 @@
 # Markov to Transformers: Character-Level Name Generation
 
-This repo explores character-level name generation using different modeling techniques—from a straightforward trigram-based Markov Model to more expressive neural networks like MLPs and beyond.
+This repo explores character-level name generation using different modeling techniques - from a straightforward trigram-based Markov Model to more expressive neural networks like MLPs and beyond.
 
 Models include:
 - **Trigram Markov**: a simple probabilistic baseline
@@ -42,7 +42,7 @@ This approach is inspired by [A Neural Probabilistic Language Model (Bengio et a
 
 ![Positional MLP Model Output](results/positional_mlp.png)
 
-### 4. MLP Letterform Generator — *Char2Pix*
+### 4. MLP Letterform Generator  -  *Char2Pix*
 A scratch-built MLP that learns to **draw characters** from symbolic embeddings. Given a letter like `'h'`, the model outputs a 20x20 image representing its glyph. The network learns to decode letters into visual space using only supervision from pixel data.
 
 ![Glyph Generator Output](results/glyph_mlp.png)
@@ -57,7 +57,7 @@ A scratch-built MLP that learns to **draw characters** from symbolic embeddings.
 A handcrafted MLP trained to generate Turkish names using character-level embeddings and BatchNorm-enhanced hidden layers.
 
 What makes this model unique is its **post-training optimization**:  
-after training, BatchNorm layers are **folded** into the preceding `Linear` layers by adjusting weights and biases directly—resulting in a faster, inference-only network without changing its predictions.
+after training, BatchNorm layers are **folded** into the preceding `Linear` layers by adjusting weights and biases directly - resulting in a faster, inference-only network without changing its predictions.
 
 This technique was inspired by the FastAI post  
 **[Faster Inference - Batch Normalization Folding](https://forums.fast.ai/t/faster-inference-batch-normalization-folding/69161)**.
@@ -87,7 +87,7 @@ python models/MLP.py
 python models/positional_MLP.py
 ```
 
-Provide the path to your dataset (`names.txt`) when prompted. Models are interactive—enter a starting character and see generated names!
+Provide the path to your dataset (`names.txt`) when prompted. Models are interactive - enter a starting character and see generated names!
 
 ## Dependencies
 - Python 3.x
