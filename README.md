@@ -1,6 +1,13 @@
 # Markov to Transformers: Character-Level Name Generation
 
-This repo explores character-level name generation using different modeling techniques—from a straightforward trigram-based Markov Model to a Multilayer Perceptron (MLP).
+This repo explores character-level name generation using different modeling techniques—from a straightforward trigram-based Markov Model to more expressive neural networks like MLPs and beyond.
+
+Models include:
+- **Trigram Markov**: a simple probabilistic baseline
+- **Basic MLP**: neural next-character predictors
+- **Positional Embedding MLP**: context-aware sequence learners
+- **Char2Pix**: symbolic-to-visual letterform generators
+- **BatchNorm-Folded MLP**: custom scratch-built networks optimized for inference
 
 ## Models
 
@@ -45,6 +52,22 @@ A scratch-built MLP that learns to **draw characters** from symbolic embeddings.
 - A small MLP maps these embeddings to 400 pixels.
 - The network is trained using MSE loss to match real font glyphs.
 
+### 5. BatchNorm-Folded MLP (Turkish Name Generator)
+
+A handcrafted MLP trained to generate Turkish names using character-level embeddings and BatchNorm-enhanced hidden layers.
+
+What makes this model unique is its **post-training optimization**:  
+after training, BatchNorm layers are **folded** into the preceding `Linear` layers by adjusting weights and biases directly—resulting in a faster, inference-only network without changing its predictions.
+
+This technique was inspired by the FastAI post  
+**[Faster Inference - Batch Normalization Folding](https://forums.fast.ai/t/faster-inference-batch-normalization-folding/69161)**.
+
+![BatchNorm Folded MLP Output](results/batchnorm_turkish_mlp.png)
+
+- Fully custom PyTorch implementation (no `nn.Module` used)
+- BatchNorm folding performed manually via algebraic transformation
+- Generates names one character at a time using trigram context
+- UTF-8 safe preprocessing for Turkish phonemes
 
 
 ## How to Run
