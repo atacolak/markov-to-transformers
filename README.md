@@ -59,8 +59,7 @@ A handcrafted MLP trained to generate Turkish names using character-level embedd
 What makes this model unique is its **post-training optimization**:  
 after training, BatchNorm layers are **folded** into the preceding `Linear` layers by adjusting weights and biases directly - resulting in a faster, inference-only network without changing its predictions.
 
-This technique was inspired by the FastAI post  
-**[Faster Inference - Batch Normalization Folding](https://forums.fast.ai/t/faster-inference-batch-normalization-folding/69161)**.
+This technique was inspired by the FastAI post **[Faster Inference - Batch Normalization Folding](https://forums.fast.ai/t/faster-inference-batch-normalization-folding/69161)**.
 
 ![BatchNorm Folded MLP Output](results/batchnorm_turkish_mlp.png)
 
