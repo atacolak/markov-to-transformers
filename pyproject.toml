@@ -1,0 +1,13 @@
+[project]
+name = "markov-to-transformers"
+version = "0.1.0"
+description = "this repo includes training/inference of deep learning models from a simple markov model all the way to transformers"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.1",
+    "numpy<2.0",
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
+]
